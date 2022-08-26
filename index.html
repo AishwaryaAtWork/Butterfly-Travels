@@ -21,8 +21,16 @@
     </nav>
 
     <!-- Alert box here -->
-    <div class="alert alert-success alert-dismissible fade show" id="success" role="alert">
+    <!-- on success  -->
+    <div class="alert alert-success alert-dismissible fade sticky-top" id="success" role="alert">
         <strong>Success !</strong> Your travel request has been successfully submitted.
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+        </button>
+    </div>
+    <!-- on fail  -->
+    <div class="alert alert-danger alert-dismissible fade sticky-top" id="fail" role="alert">
+        <strong>Error !</strong> Your travel request has not been sent due to error.
         <button type="button" class="close" data-dismiss="alert" aria-label="Close">
             <span aria-hidden="true">&times;</span>
         </button>
@@ -32,7 +40,8 @@
 
         <!-- Heading section  -->
         <div class="container my-3">
-            <h4>Welcome to Butterfly Travels !</h4>
+            <h3 class="my-3">Butterfly Travels Desk </h3>
+            <hr>
         </div>
 
         <!-- Form section  -->
@@ -42,12 +51,14 @@
                 <div class="form-group">
                     <label for="name">Name</label>
                     <input type="text" class="form-control" id="name" placeholder="Enter your name here.">
+                    <div class="invalid-feedback">This is wrong. Please provide a valid name with alphabets only.</div>
                 </div>
 
                 <!-- Email section  -->
                 <div class="form-group">
                     <label for="email">Email address</label>
-                    <input type="email" class="form-control" id="email" placeholder="Enter your email address here.">
+                    <input type="text" class="form-control" id="email" placeholder="Enter your email address here.">
+                    <div class="invalid-feedback">This is wrong. Please provide a valid name with alphabets only.</div>
                 </div>
 
                 <!-- Car section  -->
@@ -74,17 +85,18 @@
                 <!-- Contact no. section -->
                 <div class="form-group">
                     <label for="contact">Contact No.</label>
-                    <input type="number" class="form-control" id="contact" placeholder="Enter your contact no. here.">
+                    <input type="text" class="form-control" id="contact" placeholder="Enter your contact no. here.">
+                    <div class="invalid-feedback">Your contact no. must be 10 digits long.</div>
                 </div>
 
                 <!-- Message section  -->
                 <div class="form-group">
-                    <label for="msg">Any other message</label>
+                    <label for="msg">Any other message (Optional)</label>
                     <textarea class="form-control" id="msg" rows="3" placeholder="Enter your message here."></textarea>
                 </div>
 
                 <!-- Submit button  -->
-                <button type="button" class="btn btn-danger">Submit</button>
+                <button type="button" class="btn btn-danger" id="submit">Submit</button>
             </form>
         </div>
     </div>
