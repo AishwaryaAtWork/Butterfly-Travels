@@ -21,19 +21,7 @@
     </nav>
 
     <!-- Alert box here -->
-    <!-- on success  -->
-    <div class="alert alert-success alert-dismissible fade sticky-top" id="success" role="alert">
-        <strong>Success !</strong> Your travel request has been successfully submitted.
-        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-            <span aria-hidden="true">&times;</span>
-        </button>
-    </div>
-    <!-- on fail  -->
-    <div class="alert alert-danger alert-dismissible fade sticky-top" id="fail" role="alert">
-        <strong>Error !</strong> Your travel request has not been sent due to error.
-        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-            <span aria-hidden="true">&times;</span>
-        </button>
+    <div id="alertBox" class="sticky-top">
     </div>
 
     <div class="container my-3">
@@ -51,14 +39,14 @@
                 <div class="form-group">
                     <label for="name">Name</label>
                     <input type="text" class="form-control" id="name" placeholder="Enter your name here.">
-                    <div class="invalid-feedback">This is wrong. Please provide a valid name with alphabets only.</div>
+                    <div class="invalid-feedback">Please provide a valid name with alphabets only.</div>
                 </div>
 
                 <!-- Email section  -->
                 <div class="form-group">
                     <label for="email">Email address</label>
                     <input type="text" class="form-control" id="email" placeholder="Enter your email address here.">
-                    <div class="invalid-feedback">This is wrong. Please provide a valid name with alphabets only.</div>
+                    <div class="invalid-feedback">Please provide a valid email address.</div>
                 </div>
 
                 <!-- Car section  -->
@@ -84,9 +72,9 @@
 
                 <!-- Contact no. section -->
                 <div class="form-group">
-                    <label for="contact">Contact No.</label>
+                    <label for="contact">Contact Number</label>
                     <input type="text" class="form-control" id="contact" placeholder="Enter your contact no. here.">
-                    <div class="invalid-feedback">Your contact no. must be 10 digits long.</div>
+                    <div class="invalid-feedback">Your contact number must be 10 digits long.</div>
                 </div>
 
                 <!-- Message section  -->

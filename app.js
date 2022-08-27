@@ -2,18 +2,19 @@
 let validname=false;
 const Name=document.getElementById('name');
 Name.addEventListener('blur',()=>{
-    console.log('n');
+    
     //Validate name here
-    let regex=/^[a-zA-Z]([a-zA-Z ]){2,35}$/;
+    let regex=/^[a-zA-Z]([a-zA-Z ]){2,45}$/;
     let str=Name.value;
-    console.log(regex,str);
+
+    // If name is valid, removes warning
     if(regex.test(str)){
-        console.log('matched');
         Name.classList.remove('is-invalid');
         validname=true;
     }
+
+    //If name is invalid, adds warning
     else{
-        console.log('no mtched');
         Name.classList.add('is-invalid');
     }
 })
@@ -22,18 +23,19 @@ Name.addEventListener('blur',()=>{
 let validemail=false;
 const email=document.getElementById('email');
 email.addEventListener('blur',()=>{
-    console.log('e');
+    
     //Validate email here
     let regex=/^([0-9a-zA-Z_\.\-]+)@([0-9a-zA-Z_\.\-]+)\.([a-zA-Z]){2,7}$/;
     let str=email.value;
-    console.log(regex,str);
+
+    // If email is valid, removes warning
     if(regex.test(str)){
-        console.log('matched');
         email.classList.remove('is-invalid');
         validemail=true;
     }
+
+    // If email is invalid, adds warning
     else{
-        console.log('no mtched');
         email.classList.add('is-invalid');
     }
 })
@@ -44,35 +46,46 @@ const contact=document.getElementById('contact');
 contact.addEventListener('blur',()=>{
     console.log('c');
     //Validate contact here
-    let regex=/^[0-9]([0-9\-]){9,12}$/;
+    let regex=/^[0-9]([0-9\-]){9,11}$/;
     let str=contact.value;
-    console.log(regex,str);
+
+    // If contact is valid, removes warning
     if(regex.test(str)){
-        console.log('matched');
         contact.classList.remove('is-invalid');
         validcontact=true;
     }
+
+    // If contact is invalid, adds warning
     else{
-        console.log('no mtched');
         contact.classList.add('is-invalid');
     }
 })
 
-//Submit 
+//Add eventlistner on submit
 let submit=document.getElementById('submit');
 submit.addEventListener('click',(e)=>{
     e.preventDefault();
-    console.log('Youclicked');
-    //Submit your form here
-    let success=document.getElementById('success');
-    let fail=document.getElementById('fail');
-    if(validname&&validemail&&validcontact){
-        success.classList.add('show');
-        fail.classList.remove('show');
-    }
-    else{
-        fail.classList.add('show');
-        success.classList.remove('show');
 
+    //Validate the form, then show alert of success/error
+    let alertBox=document.getElementById('alertBox');
+
+    // on success
+    if(validname&&validemail&&validcontact){
+        alertBox.innerHTML=` <div class="alert alert-success alert-dismissible fade show" id="fail" role="alert">
+                <strong>Success !</strong> Your travel request has been submitted successfully.
+                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+                </button>
+            </div>`;
+    }
+
+    // on error
+    else{
+        alertBox.innerHTML=` <div class="alert alert-danger alert-dismissible fade show" id="fail" role="alert">
+                <strong>Error !</strong> Your travel request has not been sent due to error.
+                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+                </button>
+            </div>`;
     }
 })
