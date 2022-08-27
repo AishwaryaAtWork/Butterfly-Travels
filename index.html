@@ -9,15 +9,22 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
         integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <!-- Optional css  -->
+    <link rel="stylesheet" href="stylesheet.css">
 
     <title>Butterfly Travels</title>
 </head>
 
-<body>
+<body class="background">
 
     <!-- Navbar here -->
-    <nav class="navbar navbar-light bg-warning sticky-top">
-        <span class="navbar-brand mb-0 h1">Butterfly Travels</span>
+    <nav class="navbar navbar-light bg-danger sticky-top">
+        <a class="navbar-brand navbar-brand mb-0 h1" id="logo">
+            Butterfly Travels <i class="d-inline-block align-top fa fa-taxi mx-1 my-2"></i>
+          </a>
+       
     </nav>
 
     <!-- Alert box here -->
@@ -27,8 +34,8 @@
     <div class="container my-3">
 
         <!-- Heading section  -->
-        <div class="container my-3">
-            <h3 class="my-3">Butterfly Travels Desk </h3>
+        <div class="container my-4">
+            <h2 class="my-3">Butterfly Travels Desk </h2>
             <hr>
         </div>
 
@@ -38,21 +45,22 @@
                 <!-- Name section  -->
                 <div class="form-group">
                     <label for="name">Name</label>
-                    <input type="text" class="form-control" id="name" placeholder="Enter your name here.">
+                    <input type="text" class="form-control input" id="name" placeholder="Enter your name here.">
                     <div class="invalid-feedback">Please provide a valid name with alphabets only.</div>
                 </div>
 
                 <!-- Email section  -->
                 <div class="form-group">
                     <label for="email">Email address</label>
-                    <input type="text" class="form-control" id="email" placeholder="Enter your email address here.">
+                    <input type="text" class="form-control input" id="email"
+                        placeholder="Enter your email address here.">
                     <div class="invalid-feedback">Please provide a valid email address.</div>
                 </div>
 
                 <!-- Car section  -->
                 <div class="form-group">
                     <label for="car">Car</label>
-                    <select class="form-control" id="car">
+                    <select class="form-control input" id="car">
                         <option>
                             <-- Select your car -->
                         </option>
@@ -66,25 +74,27 @@
                 <!-- Address section  -->
                 <div class="form-group">
                     <label for="address">Address</label>
-                    <textarea class="form-control" id="address" rows="3"
+                    <textarea class="form-control input" id="address" rows="3"
                         placeholder="Enter your address here."></textarea>
                 </div>
 
                 <!-- Contact no. section -->
                 <div class="form-group">
                     <label for="contact">Contact Number</label>
-                    <input type="text" class="form-control" id="contact" placeholder="Enter your contact no. here.">
+                    <input type="text" class="form-control input" id="contact"
+                        placeholder="Enter your contact no. here.">
                     <div class="invalid-feedback">Your contact number must be 10 digits long.</div>
                 </div>
 
                 <!-- Message section  -->
                 <div class="form-group">
                     <label for="msg">Any other message (Optional)</label>
-                    <textarea class="form-control" id="msg" rows="3" placeholder="Enter your message here."></textarea>
+                    <textarea class="form-control input" id="msg" rows="3"
+                        placeholder="Enter your message here."></textarea>
                 </div>
 
                 <!-- Submit button  -->
-                <button type="button" class="btn btn-danger" id="submit">Submit</button>
+                <button type="button" class="btn btn-danger btn-lg" id="submit">Submit</button>
             </form>
         </div>
     </div>
